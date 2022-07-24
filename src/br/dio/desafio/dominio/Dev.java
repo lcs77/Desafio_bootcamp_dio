@@ -16,7 +16,7 @@ public class Dev {
         bootcamp.getDevsInscritos().add(this);
     }
 
-    private void progredir(){
+    public void progredir(){
         Optional<Conteudos> conteudos = this.conteudosInscritos.stream().findFirst();
         if (conteudos.isPresent()){
             this.conteudosConcluidos.add(conteudos.get());
@@ -25,7 +25,7 @@ public class Dev {
             System.err.println("Você não está matriculado em nenhum conteúdo!");
         }
     }
-    private double calcularTotalXp(){
+    public double calcularTotalXp(){
         return  this.conteudosConcluidos.stream().mapToDouble(conteudos -> conteudos.calcularXp()).sum();
     }
 
